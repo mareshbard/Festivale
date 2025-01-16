@@ -1,106 +1,33 @@
 body {
   font-family: 'Roboto Mono', sans-serif;
-  background-color: #fff8e7;
+  background-color: #fdf8ee;
   color: #333;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .container {
-  max-width: 900px; /* Define uma largura máxima */
-  margin: 30px auto; /* Adiciona margem externa e centraliza o conteúdo */
-  padding: 20px; /* Adiciona espaçamento interno */
-  background-color: #fff8e7; /* Cor de fundo */
-  border-radius: 10px; /* Bordas arredondadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Espaçamento entre elementos internos */
-}
-
-.row {
-  display: flex;
-  align-items: flex-start; /* Garante alinhamento no topo */
-  justify-content: space-between; /* Mantém espaço entre o texto e a imagem */
-  gap: 20px; /* Espaço entre o texto e a imagem */
-}
-
-.text-content {
-  flex: 1; /* Faz o texto ocupar o espaço restante */
-  font-family: 'Marcellus', serif;
-}
-
-.text-content h1 {
-  margin: 0;
-  font-size: 3em;
-  color: #204060;
-}
-
-.image img {
-  max-width: 300px; /* Ajusta a largura máxima da imagem */
-  border-radius: 10px;
-  
-}
-.image{
-  padding-right: 20px;
-}
-footer {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.tabs {
-  display: flex;
-  justify-content: space-around;
-  background-color: #ffda79;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.tab-button {
-  background: none;
-  border: none;
-  font-size: 1.2em;
-  cursor: pointer;
-  color: #333;
-}
-
-.tab-button:hover {
-  color: #204060;
-}
-
-.tab-content {
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #ffffff;
-}
-
-body {
-  font-family: 'Roboto Mono', sans-serif;
-  background-color: #fff8e7;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  max-width: 900px;
-  margin: 30px auto;
+  width: 70%;
   padding: 20px;
   background-color: #fff8e7;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 90%;
 }
 
 .row {
@@ -110,9 +37,19 @@ body {
   gap: 20px;
 }
 
+.text-content {
+  flex: 1;
+  font-family: 'Marcellus', serif;
+}
+
 .text-content h1 {
   font-size: 3em;
   color: #204060;
+  padding-left: 7%;
+}
+
+.text-content h2{
+  padding-left: 7%;
 }
 
 .image img {
@@ -126,10 +63,13 @@ footer {
 }
 
 .tabs {
-
+  display: flex;
+  justify-content: space-around;
   background-color: #ffda79;
   border-radius: 10px;
+  padding: 10px;
   margin: 0;
+  width: 70rem;
 }
 
 .tab-button {
@@ -138,7 +78,7 @@ footer {
   margin: 0;
   padding: 10px;
   border: none;
-  font-size: 1.2em;
+  font-size: 1.6em;
   cursor: pointer;
   color: #333;
 }
@@ -147,33 +87,20 @@ footer {
   color: #204060;
 }
 
-.container {
-  max-width: 1200px; /* Aumenta o tamanho máximo para telas grandes */
-  min-width: 320px; /* Define uma largura mínima */
-  margin: 30px auto; /* Centraliza o conteúdo */
-  padding: 20px;
-  background-color: #fff8e7;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Garante que nenhum elemento exceda os limites */
-}
-
 .tab-content {
-  margin: 0;
-  border: 1px solid #ccc;
+  font-size: 1.4rem;
+  width: 71rem;
+  min-height: 500px;
+  margin-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
   border-radius: 10px;
-  background: #ffffff;
 }
 
-/* Estilos para a aba ORIGEM */
-.origem-content {
+.origem-content, .estatisticas-content {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.estatisticas-content {
-  display: flex;
-  max-width: 900px;
   flex-direction: column;
   gap: 20px;
 }
@@ -186,8 +113,8 @@ footer {
 }
 
 .origem-icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 
 .origem-header h2 {
@@ -200,45 +127,8 @@ footer {
   gap: 20px;
 }
 
-.slider {
-  position: relative;
-  width: 50%;
-}
-
-.slider img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.slider-buttons {
-  position: absolute;
-  top: 50%;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  transform: translateY(-50%);
-}
-
-.slider-prev,
-.slider-next {
-  background: none;
-  border: none;
-  font-size: 2em;
-  cursor: pointer;
-  color: #204060;
-}
-
-.origem-text {
-  width: 50%;
-  font-size: 1em;
-}
-
-.highlighted {
-  background-color: #e7e4ff;
-  border: 2px solid #c4b8ff;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 10px;
+.origem-text{
+  padding: 2rem;
 }
 
 .slider {
@@ -266,8 +156,7 @@ footer {
   transform: translateY(-50%);
 }
 
-.slider-prev,
-.slider-next {
+.slider-prev, .slider-next {
   background: none;
   border: none;
   font-size: 2em;
@@ -275,146 +164,90 @@ footer {
   color: #204060;
 }
 
-.slider {
-position: relative;
-width: 50%;
-overflow: hidden;
-}
-
-.slider img {
-display: none;
-width: 100%;
-border-radius: 10px;
-}
-
-.slider img.active {
-display: block;
-}
-
-.slider-buttons {
-position: absolute;
-top: 50%;
-display: flex;
-justify-content: space-between;
-width: 100%;
-transform: translateY(-50%);
-}
-
-.slider-prev,
-.slider-next {
-background: none;
-border: none;
-font-size: 2em;
-cursor: pointer;
-color: #204060;
-}
-
 .extra-text {
-margin-top: 20px;
-padding: 10px;
-text-align: center;
-font-size: 16px;
-color: #333;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
 }
 
-.textoAbaixo{
-text-align: left;
-padding: 10px;
-}
-
-/* styles.css */
-body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;
-
+.textoAbaixo {
+  text-align: left;
+  padding: 10px;
+  font-size: 1.3rem;
 }
 
 .container2 {
-width: 80%;
-max-width: 900px;
-background: white;
-padding: 20px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-border-radius: 8px;
+  width: 80%;
+  max-width: 900px;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 .title {
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 24px;
-margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .title .icon {
-margin-right: 10px;
+  margin-right: 10px;
 }
 
 .instruments-table {
-width: 100%;
-border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.instruments-table th,
-.instruments-table td {
-border: 1px solid #ddd;
-padding: 12px;
-text-align: left;
+.instruments-table th, .instruments-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
 }
 
 .instruments-table th {
-background-color: #f4f4f4;
-font-weight: bold;
+  background-color: #f4f4f4;
+  font-weight: bold;
 }
 
 .instrument {
-display: flex;
-align-items: center;
-gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .instrument-image {
-width: 50px;
-height: auto;
-border: 1px solid #ddd;
-border-radius: 4px;
+  width: 50px;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
-
 
 #container {
-width: 100%; /* Faz com que ocupe todo o espaço disponível */
-max-width: 900px; /* Define um limite máximo */
-height: 400px; /* Define uma altura fixa */
-margin: 0 auto; /* Centraliza o gráfico */
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  margin: 0 auto;
 }
 
-.container {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+p{
+  font-size: 1.3rem;
 }
 
-.tab-content {
-width: 100%;
-max-width: 800px; /* Defina uma largura máxima consistente */
-min-height: 500px; /* Altura mínima para uniformizar */
-padding: 20px;
-box-sizing: border-box;
-background-color: #f9f9f9; /* Fundo para visualização clara */
-border: 1px solid #ddd;
-border-radius: 10px;
+.tab-button:hover {
+  color: #204060;
 }
 
-.tab-content #container {
-width: 100%; /* Ocupa todo o espaço disponível no container */
-height: 400px; /* Altura padrão para gráficos */
+.highlighted {
+  background-color: #e7e4ff;
+  border: 2px solid #c4b8ff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
-
-
 
