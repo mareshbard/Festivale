@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carnaval</title>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+</head>
+<body>
+  <div class="container">
+    <section class="content">
+      <div class="row">
+        <div class="text-content">
+          <h1>CARNAVAL</h1>
+          <p>Venha conhecer um dos festivais mais famosos do Brasil!</p>
+        </div>
+        <div class="image">
+          <img src="imgs/carnaval.jpg" alt="Carnaval">
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="tabs">
+        <button class="tab-button" onclick="changeContent('origem')">Origem</button>
+        <button class="tab-button" onclick="changeContent('instrumentos')">Instrumentos</button>
+        <button class="tab-button" onclick="changeContent('estatisticas')">Estatísticas</button>
+        <button class="tab-button" onclick="changeContent('acidentes')">Segurança</button>
+      </div>
+      <div id="tab-content" class="tab-content">
+        <!-- Conteúdo dinâmico será inserido aqui -->
+        <p>Selecione uma aba para ver o conteúdo.</p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    let currentSlide = 0;
+  
+    function changeSlide(direction) {
+      const slides = document.querySelectorAll(".slider-image");
+      slides[currentSlide].classList.remove("active");
+      currentSlide = (currentSlide + direction + slides.length) % slides.length;
+      slides[currentSlide].classList.add("active");
+    }
+  
+    function changeContent(tab) {
+      const tabContent = document.getElementById("tab-content");
+  
+      if (tab === "origem") {
+        tabContent.innerHTML = `
+        <div class="origem-content">
+            <div class="origem-header">
+              <img src="imgs/amp.png" alt="Ícone de origem" class="origem-icon">
+              <h2>ORIGEM</h2>
+            </div>
+         <div class="origem-body">
+  <div class="slider">
+    <img src="imgs/carnImg2.jpg" alt="Primeira imagem" class="slider-image active">
+    <img src="imgs/carnImg3.jpg" alt="Segunda imagem" class="slider-image">
+    <div class="slider-buttons">
+      <button class="slider-prev" onclick="changeSlide(-1)">❮</button>
+      <button class="slider-next" onclick="changeSlide(1)">❯</button>
+    </div>
+  </div>
+  <!-- Alterar ordem: Mover o texto para baixo -->
+  <div class="origem-text">
+    <p>"Alguns estudiosos entendem o Carnaval como uma festa cristã, pois sua origem... "</p>
+    <p class="highlighted">Texto destacado de exemplo.</p>
+  </div>
+</div>
+<div class="extra-text">
+  <h3>História e Tradição</h3>
+  <div class="textoAbaixo"> 
+    <p>O Carnaval é uma das festas mais celebradas no mundo, especialmente no Brasil, onde ganhou uma dimensão cultural única. Sua origem remonta a festivais antigos da Antiguidade, como as festas greco-romanas e as celebrações mesopotâmicas. Essas festividades tinham caráter religioso e marcavam transições importantes no calendário, como o início da primavera ou a chegada do ano novo. Em muitas dessas celebrações, a subversão das normas sociais era permitida, com papéis sendo invertidos, criando um ambiente de liberdade temporária.</p>
+
+<p>Durante o Império Romano, o Carnaval evoluiu a partir das Saturnálias, festas dedicadas ao deus Saturno. Nesse período, as classes sociais se misturavam, e a ordem tradicional era momentaneamente suspensa. Escravos podiam ser tratados como senhores, enquanto seus mestres adotavam um comportamento mais simples. O mesmo espírito de descontração foi incorporado ao Cristianismo, quando a Igreja adaptou as práticas pagãs ao seu calendário, transformando o Carnaval em um período que precede a Quaresma, um tempo de jejum e penitência.</p>
+    <p>Na Idade Média, o Carnaval ganhou contornos mais populares na Europa, com desfiles, danças e fantasias. Esse período era visto como um momento de liberdade e diversão antes da rigidez da Quaresma. Festas como o "Carnevale" italiano (de onde vem o termo "Carnaval") representavam a despedida da carne, tanto em sentido literal quanto metafórico, já que os cristãos iniciariam o jejum. Máscaras e fantasias eram usadas para ocultar identidades, permitindo uma maior liberdade de expressão.</p>
+  </div>
+</div>
+
+        `;
+      } else if (tab === "instrumentos") {
+        tabContent.innerHTML = `<body>
+ <div class="origem-content">
+            <div class="origem-header">
+              <img src="imgs/violao.png" alt="Ícone de origem" class="origem-icon">
+              <h2>INSTRUMENTOS</h2>
+            </div>
+    <table class="instruments-table">
+      <thead>
+        <tr>
+          <th>IMAGEM</th>
+          <th>NOME</th>
+          <th>DESCRIÇÃO</th>
+          <th>TIPO</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr>
+
+          <td>
+            <img src="imgs/cavaquinho.jpg" alt="Tambor" class="instrument-image">
+          </td>
+                   <td>
+            Cavaquinho
+          </td>
+          <td>
+        Vibração das cordas: As cordas vibram quando tocadas, e a frequência depende do comprimento, da tensão e da densidade da corda (Lei de Mersenne).
+Caixa acústica: Amplifica as ondas sonoras geradas pelas cordas através da ressonância.
+Efeito Doppler (sutil): Quando tocado em movimento, pode-se notar variações de frequência devido ao deslocamento do som no espaço.
+          </td>
+         <td>
+            Instrumento de corda
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="instrument">
+              <img src="imgs/agogo.jpg" alt="Agogô" class="instrument-image">
+              
+            </div>
+          </td>
+                   <td>
+            Agogô
+          </td>
+          <td>
+            Tamanhos diferentes: Os cones têm tamanhos diferentes, produzindo frequências distintas (grave e agudo).<br>
+            Vibração natural: O material metálico e a forma cônica influenciam a frequência de vibração.
+          </td>
+               <td>
+            Percussão
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="imgs/pandeiro.jpg" alt="Tambor" class="instrument-image">
+          </td>
+                   <td>
+            Pandeiro
+          </td>
+          <td>
+        Platinelas: Produzem som por vibração livre quando o pandeiro é sacudido, aproveitando a inércia das partículas de metal.
+        Interferência sonora: O som do pandeiro é a combinação das vibrações da membrana e das platinelas.
+
+          </td>
+         <td>
+            Percussão
+          </td>
+        </tr>
+                <tr>
+
+          <td>
+            <img src="imgs/caixa.jpg" alt="Tambor" class="instrument-image">
+          </td>
+                   <td>
+            Caixa
+          </td>
+          <td>
+         Interferência construtiva: As esteiras metálicas criam um som mais "raspado" devido à soma das frequências das vibrações.
+         Ressonância: A cavidade amplifica os tons médios e agudos.
+          </td>
+         <td>
+            Percussão
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+        `;
+      } else if (tab === "estatisticas") {
+        tabContent.innerHTML = `
+<div class="origem-content">
+          <div class="estatisticas-content">
+ <div class="origem-content">
+            <div class="origem-header">
+              <img src="imgs/estatistica.png" alt="Ícone de origem" class="origem-icon">
+              <h2>ESTATÍSTICAS</h2>
+            </div>
+            <div id="container">
+              <p>Durante o Império Romano, o Carnaval evoluiu a partir das Saturnálias, festas dedicadas ao deus Saturno. Nesse período, as classes sociais se misturavam, e a ordem tradicional era momentaneamente suspensa. Escravos podiam ser tratados como senhores, enquanto seus mestres adotavam um comportamento mais simples. O mesmo espírito de descontração foi incorporado ao Cristianismo, quando a Igreja adaptou as práticas pagãs ao seu calendário, transformando o Carnaval em um período que precede a Quaresma, um tempo de jejum e penitência.</p>
+    <p>Na Idade Média, o Carnaval ganhou contornos mais populares na Europa, com desfiles, danças e fantasias. Esse período era visto como um momento de liberdade e diversão antes da rigidez da Quaresma. Festas como o "Carnevale" italiano (de onde vem o termo "Carnaval") representavam a despedida da carne, tanto em sentido literal quanto metafórico, já que os cristãos iniciariam o jejum. Máscaras e fantasias eram usadas para ocultar identidades, permitindo uma maior liberdade de expressão.</p>
+  
+              </div>
+            <p class="highcharts-description">Gráfico informativo para analisar estimativas de lucro com o Carnaval</p>
+          </div>
+           </div>
+        `;
+  
+        // Renderiza o gráfico Highcharts
+        Highcharts.chart('container', {
+          title: {
+            text: 'Receita gerada pelo carnaval (estimativas)',
+            align: 'center'
+          },
+          subtitle: {
+            text: '2016-2022',
+            align: 'center'
+          },
+          yAxis: {
+            title: {
+              text: 'Impacto econômico'
+            }
+          },
+          xAxis: {
+            categories: ['2016', '2018', '2020', '2022'],
+            title: {
+              text: 'Anos'
+            }
+          },
+          legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+          },
+          series: [
+            {
+              name: 'Fortaleza',
+              data: [800000000, 1000000000, 1200000000, 1500000000]
+            },
+            {
+              name: 'Olinda',
+              data: [600000000, 700000000, 900000000, 1000000000]
+            },
+            {
+              name: 'São Paulo',
+              data: [1800000000, 2100000000, 2500000000, 3000000000]
+            },
+            {
+              name: 'Rio de Janeiro',
+              data: [2500000000, 3000000000, 3800000000, 4500000000]
+            }
+          ],
+          responsive: {
+            rules: [
+              {
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }
+                }
+              }
+            ]
+          }
+          
+        });
+        
+      } else if (tab === "acidentes") {
+        tabContent.innerHTML = `
+        <div class="origem-content">
+  <div class="origem-header">
+    <img src="imgs/alert2.png" alt="Ícone de origem" class="origem-icon">
+    <h2>SEGURANÇA</h2>
+  </div>
+  <div class="origem-body">
+    <div class="slider">
+      <img src="imgs/seg1.webp" alt="Primeira imagem" class="slider-image active">
+      <img src="imgs/seg2.jpg" alt="Segunda imagem" class="slider-image">
+      <div class="slider-buttons">
+        <button class="slider-prev" onclick="changeSlide(-1)">❮</button>
+        <button class="slider-next" onclick="changeSlide(1)">❯</button>
+      </div>
+    </div>
+    <div class="origem-text">
+      <p>
+      Setores afetados: Durante o Carnaval, o número de trabalhadores em setores como eventos, turismo, transporte, limpeza urbana, e segurança aumenta significativamente.
+      </p>
+      <p class="highlighted">
+       Veja a seguir informações importantes que envolvem a segurança do trabalhador durante o período de festas:
+      </p>
+    </div>
+  </div>
+  <!-- Novo texto ao final -->
+  <div class="extra-text">
+   <h3>Normas regulamentadoras relevantes (NR):</h3>
+  <div class="textoAbaixo"> 
+    <p>NR-6: Equipamentos de Proteção Individual (EPI).</p>
+    <p>NR-9: Programa de Prevenção de Riscos Ambientais (PPRA).</p>
+    <p>NR-12: Segurança no Trabalho em Máquinas e Equipamentos (palcos e trios elétricos).</p>
+    <p>NR-35: Trabalho em Altura (montagem de estrutura)</p>
+    </div>
+    <h3>Proteção individual:</h3>
+  
+    <div class="textoAbaixo"> 
+    <p>Equipamentos de proteção (EPI) adequados, como luvas, máscaras e calçados de segurança.</p>
+    <p>Condições sanitárias: Garantir acesso a banheiros, água potável e locais de descanso para trabalhadores.</p>
+    <p>Controle de exposição: Redução de exposição a ruídos altos, produtos químicos ou longas jornadas.</p>
+    </div>
+    <h3>Higiene do trabalho:</h3>
+  
+    <div class="textoAbaixo"> 
+    <p>Proteção individual: Equipamentos de proteção (EPI) adequados, como luvas, máscaras e calçados de segurança.</p>
+    <p>Condições sanitárias: Garantir acesso a banheiros, água potável e locais de descanso para trabalhadores.</p>
+    <p>Controle de exposição: Redução de exposição a ruídos altos, produtos químicos ou longas jornadas.</p>
+    </div>
+     <h3>Segurança do trabalho:</h3>
+  
+    <div class="textoAbaixo"> 
+    <p>Treinamento: Capacitação de trabalhadores para operar equipamentos e lidar com emergências.</p>
+    <p>Inspeções: Verificação de estruturas como arquibancadas, palcos e camarotes.</p>
+    <p>Planejamento: Mapear riscos e implementar medidas preventivas em eventos.</p>
+    </div>
+  </div>
+</div>
+
+        `;
+      } else {
+        tabContent.innerHTML = `<p>Conteúdo para a aba "${tab.toUpperCase()}" ainda está em construção.</p>`;
+      }
+    }
+  </script>
+  
+</body>
+</html>
